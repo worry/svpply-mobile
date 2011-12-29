@@ -1,0 +1,2 @@
+Poisonous application-cachery.
+<html manifest="clock.appcache">  Forced caching achieved by supplying a tweaked file via Charles.

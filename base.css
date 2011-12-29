@@ -6076,11 +6076,32 @@ No.  We begin by coveting what we see every day. */
 		position: absolute;
 		top: 0;
 		width: 100%;
-		z-index: 5;
+		z-index: 10;
 		background: #F0F8FF;
 		border-bottom: 5px solid black;
-		display: none;
+	top: -202px;	
+	overflow: visible !important;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
 	}
+	#filters:after {
+	    content: 'Filters';
+		position: absolute; 
+		bottom: -1.5em;
+		left: 0;
+		height: 1.5em;
+		line-height: 1.5em;
+		width: 50px;
+		display: block;
+		background: red; 
+		
+	}
+	#filters:target {
+		top: 0 !important;
+	}	
+		
 	#filters h3 {
 		margin: 0;
 		display: block;

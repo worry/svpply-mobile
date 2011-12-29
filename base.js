@@ -12400,3 +12400,7 @@ meta2.content = "yes";
 // now add the meta element to the head
 document.getElementsByTagName('head').item(0).appendChild(meta2);
 }
+
+$('#filters form').click(function() {
+  alert('Handler for .click() called.');
+});
