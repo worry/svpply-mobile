@@ -12378,6 +12378,8 @@ $(window).load(function() {
         });
         document.location = "/register"
     }
+	$('#personal ul:first-child').append('<li><a id="filter-trigger" href="#filters">Filters</a></li>');
+	$('#filters').append('<a class="shadowbox" href="#/">Exit Filters</a>');
 });
 
 
@@ -12401,6 +12403,5 @@ meta2.content = "yes";
 document.getElementsByTagName('head').item(0).appendChild(meta2);
 }
 
-$('#filters form').click(function() {
-  alert('Handler for .click() called.');
-});
+
+//  #personal
