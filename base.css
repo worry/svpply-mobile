@@ -565,6 +565,15 @@ text-align: center;
 font-family: 'Lucida Grande';
 font-size: 11px
 }
+#btn_create_set {
+background-color: #44D27D;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px
+}
+#btn_create_set:hover {
+background-color: #34C26D
+}
 #btn_new {
 background-color: #ebebeb;
 color: black;
@@ -3705,7 +3714,7 @@ border: none
 .setButton {
 float: left
 }
-.setCreatorCheckbox {
+.setCreatorCheckbox,.setWishlistCheckbox {
 width: 165px;
 display: inline-block;
 padding: 2px;
@@ -3713,11 +3722,11 @@ margin: 1px
 1px 1px 3px;
 float: left
 }
-.setCreatorCheckbox
+.setCreatorCheckbox input,.setWishlistCheckbox
 input {
 padding-right: 3px
 }
-.setCreatorCheckbox
+.setCreatorCheckbox label,.setWishlistCheckbox
 label {
 position: relative;
 top: -1px
@@ -3955,6 +3964,27 @@ opacity: 0.5
 * {
 cursor: default
 }
+.claim_banner {
+width: 607px;
+background: #feffc5;
+padding: 8px
+14px;
+margin: 0;
+position: absolute;
+top: 20px;
+font-size: 14px;
+color: #7a7a7a;
+font-weight: 300
+}
+.claim_banner
+span.bold {
+color: #676767;
+font-weight: 500
+}
+.claim_banner
+a {
+color: #7a7a7a
+}
 .store.row {
 margin-bottom: 25px;
 height: 130px;
@@ -4047,6 +4077,16 @@ display: inline-block
 .store.featured .grab.search
 .details {
 display: none
+}
+.model.store.avatar
+img {
+width: 40px;
+height: 40px
+}
+.model.store.avatar_80
+img {
+width: 80px;
+height: 80px
 }
 #unlogged_welcome {
 background: url('/assets/image/unlogged_welcome_bg.png');
@@ -4302,8 +4342,11 @@ border-bottom: 1px solid white
 div {
 float: left
 }
+.contest_banners {
+margin: -5px 0 20px
+}
 nav#contest {
-margin: -5px 0 20px;
+margin-bottom: 5px;
 padding: 6px
 15px 10px;
 background: #b8fac3;
@@ -4333,6 +4376,43 @@ color: #434343;
 border-bottom: 1px solid #434343
 }
 nav#contest p a:hover {
+border-bottom: 0
+}
+nav#contest.winners {
+padding: 6px
+15px 10px;
+background: #b8fac3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+position: relative
+}
+nav#contest.winners
+div.icon {
+width: 23px;
+height: 26px;
+display: block;
+position: relative;
+top: 6px;
+margin-right: 15px;
+background-image: url('/assets/image/santa.png');
+float: left
+}
+nav#contest.winners
+p {
+color: #000;
+line-height: 16px;
+font-size: 12px;
+position: relative;
+top: 3px;
+float: left
+}
+nav#contest.winners p
+a {
+color: #000;
+border-bottom: 1px solid #000
+}
+nav#contest.winners p a:hover {
 border-bottom: 0
 }
 #contest_header {
@@ -4374,6 +4454,15 @@ line-height: 40px;
 color: #37b369;
 margin-bottom: 25px
 }
+#contest_header.set
+h2.winner {
+margin-bottom: 10px
+}
+#contest_header.set.contest_finished h2,
+#contest_header.set.contest_finished h2
+a {
+color: #000
+}
 #contest_header
 h3 {
 font-size: 28px;
@@ -4385,11 +4474,41 @@ margin-bottom: 20px
 a {
 color: #ff5b54
 }
+#contest_header.set.contest_finished
+h3.status {
+font-size: 20px;
+color: #000
+}
 #contest_header
 p {
 font-size: 20px;
 line-height: 24px;
 color: #2c2c2c
+}
+#contest_header.set
+p {
+font-size: 16px
+}
+#contest_header.set
+.judges {
+margin-bottom: 15px
+}
+#contest_header.set .judges
+.judge {
+width: 100px;
+text-align: center;
+display: inline-block;
+margin: 0
+10px
+}
+#contest_header.set .judges .judge
+img {
+width: 100px;
+height: 100px
+}
+#contest_header.set .judges .judge
+a.image {
+border-bottom: 0
 }
 #contest_header
 a.btn.rounded {
@@ -4407,6 +4526,16 @@ font-size: 14px;
 color: #CCC;
 font-weight: normal;
 border-bottom: 1px solid #ccc
+}
+#contest_header.set.contest_finished
+a.link {
+font-size: 20px;
+font-weight: bold;
+color: #ff545a;
+border-bottom: 1px solid #ff545a
+}
+#contest_header.set.contest_finished a.link:hover {
+border-bottom: 0
 }
 #contest_header
 .close_button {
@@ -4518,14 +4647,20 @@ font-weight: bold
 a {
 font-weight: bold
 }
-.user.avatar
+.user.avatar a,
+.user.avatar_80
 a {
 border-bottom: 0
 }
 .user.avatar
 img {
-width: 40px;
-height: 40px
+max-width: 40px;
+max-height: 40px
+}
+.model.user.avatar_80
+img {
+max-width: 80px;
+max-height: 80px
 }
 .feed
 .product {
@@ -4541,6 +4676,15 @@ display: inline-block;
 margin: 15px
 0 0;
 color: #999
+}
+.model.product.avatar_80 {
+width: 80px;
+height: 80px;
+position: relative
+}
+.model.product.avatar_80
+img {
+position: absolute
 }
 .feed
 .comment {
@@ -4561,6 +4705,8 @@ border-bottom: 1px solid #e4e3d4
 }
 .feed .comment a:hover {
 border-bottom: 1px solid #000
+}
+.model.comment.stream {
 }
 .feed
 .relationship {
@@ -4720,16 +4866,115 @@ margin-right: 10px
 .set_mark {
 margin-right: 8px
 }
-.debug .event.model.stream>.follow.user {
-background: yellow
+.model.set.stream
+.subject {
+text-align: center;
+line-height: 0;
+margin-bottom: 20px
 }
-.event.model.stream > .follow.user
-.avatar.enactor {
-margin-right: 5px
+.debug .model.set.stream
+.subject {
+background: blue
 }
-.event.model.stream > .follow.user
+.model.set.stream .subject
+a {
+border-bottom: 0
+}
+.model.set.stream
+.enactor {
+width: 450px;
+margin: 0
+auto
+}
+.model.set.avatar {
+position: relative;
+width: 40px;
+height: 40px;
+overflow: hidden
+}
+.model.set.avatar>img {
+width: 40px;
+height: 40px
+}
+.model.set.avatar>.theme>img {
+position: absolute
+}
+.model.set.avatar_80 {
+position: relative;
+width: 80px;
+height: 80px
+}
+.model.set.avatar_80
+img {
+width: 80px;
+height: 80px
+}
+.model.set.avatar_80>.theme>a>img {
+position: absolute
+}
+.model.set_item.set_embed {
+display: inline-block;
+margin: 20px
+10px 0px
+}
+.model.set_item.set_embed
+img {
+display: block
+}
+.length2
+.model.set_item.set_embed {
+margin: 10px
+30px 0px
+}
+.length3
+.model.set_item.set_embed {
+margin: 10px
+5px 0px
+}
+.length5
+.model.set_item.set_embed {
+margin: 10px
+5px 0px
+}
+.model.set_item.embedded_group
+.avatar {
+float: left
+}
+.model.set_item.embedded_group .avatar
+img {
+display: block
+}
+.model.set_item.embedded_group
 .text {
-max-width: 345px
+float: left;
+margin-top: 12px;
+margin-left: 15px;
+max-width: 390px
+}
+.model.set.stream .text .embedded_group,
+.model.set_item.embedded .text
+.embedded_group {
+margin-top: 15px
+}
+.model.follow.stream.user,.model.follow.stream.store {
+}
+.model.follow.embedded.user {
+margin-left: 120px
+}
+.model.follow.embedded_group
+.avatar {
+float: left
+}
+.model.follow.embedded_group .avatar
+img {
+display: block
+}
+.model.follow.embedded_group
+.text {
+float: left;
+margin-top: 12px;
+margin-left: 20px;
+max-width: 390px
 }
 .wishlist_rank {
 float: left;
@@ -4737,10 +4982,21 @@ width: 100%;
 padding: 10px
 0 16px 0;
 line-height: 24px;
-border-top: 1px solid #CCC
+border-top: 1px solid #CCC;
+position: relative;
+overflow: hidden
 }
 .wishlist_rank.odd {
 background: #f4f4f4
+}
+.contest_finished .wishlist_rank.rank1
+.ribbon {
+width: 93px;
+height: 95px;
+background: transparent url('/assets/image/contest/communitychoice.gif') no-repeat top left;
+position: absolute;
+top: -8px;
+left: -8px
 }
 .wishlist_rank
 .rank {
@@ -4755,6 +5011,11 @@ text-align: center;
 line-height: 42px;
 margin: 20px
 15px 20px 30px
+}
+.contest_finished .wishlist_rank.rank1
+.rank {
+background-image: url('/assets/image/yellow_circle.png');
+color: #000
 }
 .wishlist_rank.odd
 .rank {
@@ -5072,6 +5333,9 @@ position: absolute;
 bottom: -19px;
 left: 77px
 }
+#admin_user_delete {
+color: red
+}
 section.set {
 width: 653px !important;
 margin-left: -18px !important;
@@ -5099,7 +5363,7 @@ line-height: 28px
 }
 section.set header
 span.wrap {
-color: #898989;
+color: #000;
 width: 510px;
 line-height: 20px;
 font-size: 12px;
@@ -5456,6 +5720,44 @@ border-bottom: 1px solid #BBB
 }
 section.set .sets .view_all a:hover {
 border-bottom: 0
+}
+section.set header
+.btn_wishlist {
+width: 89px;
+height: 22px;
+padding: 0;
+padding-top: 6px;
+background: transparent url('/assets/image/wishlist_btn_background.png') no-repeat 0 0;
+color: #568A84;
+text-align: center
+}
+section.set header .btn_wishlist.wishlist,section.set header .btn_wishlist:active {
+padding-top: 6px;
+background: transparent url('/assets/image/wishlist_btn_background.png') no-repeat 0px -28px
+}
+section.set header .btn_wishlist
+span.icon {
+display: inline-block;
+width: 13px;
+height: 13px;
+background: transparent url('/assets/image/wishlist_btn_icon.png') no-repeat top left;
+position: relative;
+top: 1px;
+margin-right: 5px
+}
+.set_mark.wishlist {
+display: inline-block;
+background: transparent url('/assets/image/wishlist-gift-teal.png') no-repeat top left;
+width: 21px;
+height: 21px;
+top: 0;
+position: relative;
+cursor: pointer
+}
+.set.medium
+.set_mark.wishlist {
+top: 6px;
+margin-right: 3px
 }
 section.store
 .masthead {
@@ -5843,6 +6145,7 @@ h2 {
 padding: 20px
 0
 }
+
 
 /*Custom mobile stylesheet for SVPPLY*/
 
