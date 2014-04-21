@@ -1,5 +1,5 @@
 <DEPRECATED>
 Just use the svpply mobile site and app.  Both are a joy.
 
-Poisonous application-cachery.
+Application Cache with tweaked homepage.
 <html manifest="clock.appcache">  Forced caching achieved by supplying a tweaked file via Charles.
